@@ -19,8 +19,6 @@ export default function ArchetypeGrid({ initialItems, total, pageSize }: Archety
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Filtro de seguridad: descarta cualquier entrada sin nombre válido
-  // (evita que se generen links tipo /archetypes/undefined).
   const validItems = items.filter(
     (item): item is ArchetypeItem => typeof item.archetype === "string" && item.archetype.length > 0
   );

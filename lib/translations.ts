@@ -23,7 +23,7 @@ export function translateCardType(type: string): string {
   return cardTypeES[type] ?? type;
 }
 
-// Color de acento inspirado en el color real del marco de cada tipo de carta.
+
 export function accentForCardType(type: string): string {
   if (type.includes("Spell")) return "#3ddc84";
   if (type.includes("Trap")) return "#ff4fa3";

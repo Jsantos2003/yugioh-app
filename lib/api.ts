@@ -57,7 +57,7 @@ async function fetchJson<T>(url: string, retries = 2): Promise<T> {
         return (await res.json()) as T;
       }
 
-      // Si la API está saturada (429) o con error temporal (5xx), reintenta.
+    
       if ((res.status === 429 || res.status >= 500) && attempt < retries) {
         await new Promise((r) => setTimeout(r, 400 * (attempt + 1)));
         continue;
@@ -91,7 +91,7 @@ export async function getArchetypeSample(archetypeName: string): Promise<YgoCard
   }
 }
 
-// Todos los miembros de un arquetipo (para la página de detalle).
+
 export async function getCardsByArchetype(archetypeName: string): Promise<YgoCard[]> {
   const data = await fetchJson<{ data: YgoCard[] }>(
     `${BASE_URL}/cardinfo.php?archetype=${encodeURIComponent(archetypeName)}`
@@ -104,7 +104,7 @@ export async function getBanlist(): Promise<YgoCard[]> {
   return data.data ?? [];
 }
 
-// Una carta puntual por su ID (para el detalle de la lista prohibida).
+
 export async function getCardById(id: string): Promise<YgoCard | null> {
   try {
     const data = await fetchJson<{ data: YgoCard[] }>(`${BASE_URL}/cardinfo.php?id=${id}`);
@@ -116,4 +116,17 @@ export async function getCardById(id: string): Promise<YgoCard | null> {
 
 export async function getCardSets(): Promise<CardSet[]> {
   return fetchJson<CardSet[]>(`${BASE_URL}/cardsets.php`);
+}
+
+
+export async function searchCardsByName(query: string): Promise<YgoCard[]> {
+  if (!query.trim()) return [];
+  try {
+    const data = await fetchJson<{ data: YgoCard[] }>(
+      `${BASE_URL}/cardinfo.php?fname=${encodeURIComponent(query)}`
+    );
+    return (data.data ?? []).slice(0, 24);
+  } catch {
+    return [];
+  }
 }

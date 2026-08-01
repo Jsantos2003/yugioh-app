@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 const eras = ["Duel Monsters", "GX", "5D's", "ZEXAL", "ARC-V", "VRAINS"];
 
 export default async function CharactersPage() {
-  // Máximo 6 peticiones a Yugipedia en paralelo para no ser bloqueados.
+  
   const enriched = await mapWithConcurrency(characters, 6, async (c) => {
     const info = await getYugipediaInfo(c.slug);
     const rawExtract = info.extract ? info.extract.slice(0, 320) : "";

@@ -30,7 +30,7 @@ export default async function SpellTrapSubtypePage({ params }: PageProps) {
   const allCards = await getCardsByType(type as "Spell Card" | "Trap Card");
   const cards = allCards.filter((c) => c.race === raceName);
 
-  // Se traduce una muestra de hasta 40 para no saturar el traductor.
+
   const sample = cards.slice(0, 40);
   const translated = await mapWithConcurrency(sample, 6, async (card) => ({
     card,

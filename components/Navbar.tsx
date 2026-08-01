@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import CartWidget from "@/components/CartWidget";
+import SearchBar from "@/components/SearchBar";
 
 const links = [
   { href: "/archetypes", label: "Arquetipos" },
@@ -15,16 +15,16 @@ export default function Navbar() {
     <header className="navbar">
       <div className="navbar-inner">
         <Link href="/" className="brand">
-          {/* 👇 Ícono externo en lugar del SVG */}
-          <Image
-            src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/f1ea70e0-6b84-41e0-945a-9388d618e4a0/dc0ha8w-7530b956-68f7-497f-ab9b-ae71d5100cbd.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiIvZi9mMWVhNzBlMC02Yjg0LTQxZTAtOTQ1YS05Mzg4ZDYxOGU0YTAvZGMwaGE4dy03NTMwYjk1Ni02OGY3LTQ5N2YtYWI5Yi1hZTcxZDUxMDBjYmQucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.AgCslVL-9PLL6fRP7jeE1YYeAj8UNzcmJL_rQ0uEx3k"
-            alt="Internet icon"
-            width={50}   // 👈 ajusta el tamaño aquí
-            height={50}  // 👈 puedes agrandarlo cambiando estos valores
-            className="brand-icon"
-          />
+          <svg className="brand-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="32" cy="32" r="30" fill="none" stroke="#e2b23c" strokeWidth="2" />
+            <path d="M12 32c6-14 34-14 40 0-6 14-34 14-40 0z" fill="none" stroke="#e2b23c" strokeWidth="2" />
+            <circle cx="32" cy="32" r="8" fill="#e2b23c" />
+            <circle cx="32" cy="32" r="3.2" fill="#0b0b12" />
+          </svg>
           <span className="brand-text">Duel Hub</span>
         </Link>
+
+        <SearchBar />
 
         <nav aria-label="Navegación principal">
           <ul className="nav-links">

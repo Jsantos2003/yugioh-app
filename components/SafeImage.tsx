@@ -14,6 +14,6 @@ export default function SafeImage({ src, alt }: SafeImageProps) {
     return <div className="ygo-card-media-empty">🂠</div>;
   }
 
-  // eslint-disable-next-line @next/next/no-img-element
+  
   return <img src={src} alt={alt} onError={() => setFailed(true)} />;
 }

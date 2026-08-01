@@ -22,7 +22,7 @@ export default function ProductCard({ code, name, numCards, date, categoryLabel 
     <article className="ygo-card">
       <div className="ygo-card-media">
         {!imgError ? (
-          // eslint-disable-next-line @next/next/no-img-element
+          
           <img src={imageUrl} alt={name} onError={() => setImgError(true)} />
         ) : (
           <div className="ygo-card-media-empty">🂠</div>

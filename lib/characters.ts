@@ -1,12 +1,12 @@
 export interface Character {
-  slug: string;         // título exacto de la página en Yugipedia
-  name: string;         // nombre a mostrar
+  slug: string;         
+  name: string;        
   series: string;
   role: string;
 }
 
 export const characters: Character[] = [
-  // --- Yu-Gi-Oh! (era Duel Monsters) ---
+  
   { slug: "Yami Yugi", name: "Yugi Muto", series: "Duel Monsters", role: "Protagonista" },
   { slug: "Seto Kaiba", name: "Seto Kaiba", series: "Duel Monsters", role: "Rival" },
   { slug: "Joey Wheeler", name: "Joey Wheeler", series: "Duel Monsters", role: "Secundario" },
@@ -23,7 +23,7 @@ export const characters: Character[] = [
   { slug: "Mako Tsunami", name: "Mako Tsunami", series: "Duel Monsters", role: "Relleno" },
   { slug: "Odion", name: "Odion", series: "Duel Monsters", role: "Secundario" },
 
-  // --- Yu-Gi-Oh! GX ---
+ 
   { slug: "Jaden Yuki", name: "Jaden Yuki", series: "GX", role: "Protagonista" },
   { slug: "Alexis Rhodes", name: "Alexis Rhodes", series: "GX", role: "Duelista" },
   { slug: "Chazz Princeton", name: "Chazz Princeton", series: "GX", role: "Rival" },
@@ -35,7 +35,7 @@ export const characters: Character[] = [
   { slug: "Blair Flannigan", name: "Blair Flannigan", series: "GX", role: "Relleno" },
   { slug: "Camula", name: "Camula", series: "GX", role: "Villana" },
 
-  // --- Yu-Gi-Oh! 5D's ---
+  
   { slug: "Yusei Fudo", name: "Yusei Fudo", series: "5D's", role: "Protagonista" },
   { slug: "Jack Atlas", name: "Jack Atlas", series: "5D's", role: "Rival" },
   { slug: "Crow Hogan", name: "Crow Hogan", series: "5D's", role: "Secundario" },
@@ -46,7 +46,7 @@ export const characters: Character[] = [
   { slug: "Kalin Kessler", name: "Kalin Kessler", series: "5D's", role: "Villano" },
   { slug: "Rex Goodwin", name: "Rex Goodwin", series: "5D's", role: "Villano" },
 
-  // --- Yu-Gi-Oh! ZEXAL ---
+  
   { slug: "Yuma Tsukumo", name: "Yuma Tsukumo", series: "ZEXAL", role: "Protagonista" },
   { slug: "Astral", name: "Astral", series: "ZEXAL", role: "Secundario" },
   { slug: "Tori Meadows", name: "Tori Meadows", series: "ZEXAL", role: "Secundaria" },
@@ -56,7 +56,6 @@ export const characters: Character[] = [
   { slug: "Vector", name: "Vector", series: "ZEXAL", role: "Villano" },
   { slug: "Dr. Faker", name: "Dr. Faker", series: "ZEXAL", role: "Villano" },
 
-  // --- Yu-Gi-Oh! ARC-V ---
   { slug: "Yuya Sakaki", name: "Yuya Sakaki", series: "ARC-V", role: "Protagonista" },
   { slug: "Yuzu Hiragi", name: "Yuzu Hiragi", series: "ARC-V", role: "Duelista" },
   { slug: "Gongenzaka", name: "Gongenzaka", series: "ARC-V", role: "Secundario" },
@@ -66,7 +65,7 @@ export const characters: Character[] = [
   { slug: "Reiji Akaba", name: "Reiji Akaba", series: "ARC-V", role: "Secundario" },
   { slug: "Serena (Yu-Gi-Oh! ARC-V)", name: "Serena", series: "ARC-V", role: "Duelista" },
 
-  // --- Yu-Gi-Oh! VRAINS ---
+  
   { slug: "Yusaku Fujiki", name: "Yusaku Fujiki (Playmaker)", series: "VRAINS", role: "Protagonista" },
   { slug: "Ai (Yu-Gi-Oh! VRAINS)", name: "Ai", series: "VRAINS", role: "Secundario" },
   { slug: "Aoi Zaizen", name: "Aoi Zaizen (Blue Angel)", series: "VRAINS", role: "Duelista" },

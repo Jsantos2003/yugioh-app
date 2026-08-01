@@ -1,7 +1,3 @@
-// Traduce texto de inglés a español. Se prueba primero el endpoint no oficial
-// de Google Translate (soporta mucho más volumen que servicios "free tier"),
-// y si falla, se usa MyMemory como respaldo. Si ambos fallan, se devuelve
-// el texto original para no romper la página.
 
 async function translateViaGoogle(text: string): Promise<string> {
   const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=es&dt=t&q=${encodeURIComponent(
@@ -39,7 +35,7 @@ export async function translateText(text: string): Promise<string> {
     try {
       return await translateViaMyMemory(text);
     } catch {
-      return text; // último recurso: texto original en inglés
+      return text; 
     }
   }
 }

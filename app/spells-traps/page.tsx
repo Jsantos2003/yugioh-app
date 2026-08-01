@@ -32,7 +32,9 @@ function groupByRace(cards: YgoCard[]): RaceGroup[] {
       groups.set(race, { race, count: 1, sample: card });
     }
   }
-  return Array.from(groups.values()).sort((a, b) => b.count - a.count);
+  return Array.from(groups.values())
+    .filter((group) => group.count > 1) 
+    .sort((a, b) => b.count - a.count);
 }
 
 export default async function SpellsTrapsPage() {
