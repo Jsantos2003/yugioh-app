@@ -1,8 +1,11 @@
 export async function getCardsByType(type: "Spell Card" | "Trap Card"): Promise<YgoCard[]> {
-  const data = await fetchJson<{ data: YgoCard[] }>(
-    `${BASE_URL}/cardinfo.php?type=${encodeURIComponent(type)}`
-  );
-  return data.data ?? [];
+  const url = `${BASE_URL}/cardinfo.php?type=${encodeURIComponent(type)}`;
+  const res = await fetch(url, { cache: "no-store" }); // sin caché: la respuesta es demasiado grande para el Data Cache de Vercel
+  if (!res.ok) {
+    throw new Error(`La API de YGOPRODeck respondió con un error (${res.status}).`);
+  }
+  const json = await res.json();
+  return json.data ?? [];
 }
 
 const BASE_URL = "https://db.ygoprodeck.com/api/v7";
